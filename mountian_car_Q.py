@@ -149,10 +149,11 @@ def train_and_plot(lr, discount, epsilon_decay): # train the graph and show the
         p, v = Qt.update_state(p, v, a) # update the state based on the action 
         ax.scatter(p, fn(p), s = 15, c = 'r') # plot where the mountian car is  
         ax.plot(x, y, c = 'b') # plot mounitans repeative but im not memory constrained so im not going to rewrite
+        ax.set_axis_off()
         camera.snap() # snap the frame 
-    animation = camera.animate(fps = 30)) # create animation at 30 fps 
+    animation = camera.animate()
     animation.save('mountiancar.gif', writer='Pillow') # save the animation as a gif (located in this folder)
 
 if __name__ == "__main__": # 
     train_and_plot(.894, .282, .640)
-    
+   
